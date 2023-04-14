@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: #111;
+  font-family: "Montserrat", sans-serif;
+}
+
+.sidenav-list:is(:hover, :focus, .active) {
+  background-color: rgba(200, 200, 200, 0.5);
+}
+
+.sidenav-list.activeSideNav {
+  display: flex;
+  justify-content: center;
+  background: none;
+}
+
+.sidenav-list.activeSideNav:is(:hover, :focus, .active) div {
+  border-raduis: 50%;
+  background: rgba(200, 200, 200, 0.5);
+}
+
+.sidenav-list.activeSideNav div > p {
+  display: none;
+  transition-delay: 500ms;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  padding: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  height: 100px !important;
+  background: rgba(200, 200, 200, 0.5);
+}
+
+.storage::before {
+  content: "";
+  width: 65%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  background: white;
+}
